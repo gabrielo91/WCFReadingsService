@@ -9,12 +9,14 @@ namespace ReadingsService.Contracts.Controller
 {
     public class ReadingsController
     {
-        public ReportReadingsProcessResultResponse saveReadings(ReportReadingsProcessResultRequest reportReadingsProcessResultRequest)
+        
+        public ProcessRequestResultResponse saveReadings(ReportReadingsRequest reportReadings)
         {
             throw new NotImplementedException();
         }
+        
 
-        public ProcessRequestResultResponse getProcessResult(ReportReadingsRequest reportReadings)
+        public ReportReadingsProcessResultResponse getProcessResult(ReportReadingsProcessResultRequest reportReadingsProcessResultRequest)
         {
             throw new NotImplementedException();
         }

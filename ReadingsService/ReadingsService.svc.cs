@@ -17,14 +17,14 @@ namespace ReadingsService
         public ProcessRequestResultResponse ReportReadings(ReportReadingsRequest reportReadings)
         {
             var readingsController = new ReadingsController();
-            var processRequestResult = readingsController.getProcessResult(reportReadings);
+            var processRequestResult = readingsController.saveReadings(reportReadings);
             return processRequestResult;
         }
 
         public ReportReadingsProcessResultResponse GetProcessResult(ReportReadingsProcessResultRequest reportReadingsProcessResultRequest)
         {
             var readingsController = new ReadingsController();
-            var reportReadingsProcessResult = readingsController.saveReadings(reportReadingsProcessResultRequest);
+            var reportReadingsProcessResult = readingsController.getProcessResult(reportReadingsProcessResultRequest);
             return reportReadingsProcessResult;
 
         }

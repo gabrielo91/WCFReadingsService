@@ -15,5 +15,6 @@ namespace ReadingsService.Contracts.Models
 
         [DataMember]
         public int Password { get; set; }
+               
     }
 }
