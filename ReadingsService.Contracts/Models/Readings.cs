@@ -10,7 +10,7 @@ namespace ReadingsService.Contracts.Models
     [DataContract]
     public class Readings
     {
-        [DataMember]
+        public int Id { get; set; }
         public int ConsecutivoProcesoId { get; set; }
         [DataMember]
         public string CodigoProveedor { get; set; }

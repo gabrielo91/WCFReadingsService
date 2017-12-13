@@ -9,7 +9,7 @@ namespace ReadingsService.Contracts.DAOs
 {
     public class DAOProveedores : IDAOProveedores
     {
-        public Proveedores GetProveedor(string username, string password)
+        public bool ValidateProveedor(string username, string password)
         {
             throw new NotImplementedException();
         }

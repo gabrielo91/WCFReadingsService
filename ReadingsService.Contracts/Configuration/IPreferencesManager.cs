@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace ReadingsService.Contracts.Configuration
 {
-    interface IPreferencesManager
+    public interface IPreferencesManager
     {
+        string GetDBUserName();
+
+        string GetDBPassword();
+
+        string GetDBPort();
+
+        string GetDBUrl();
+
+        string GetLogsPath();
+
     }
 }

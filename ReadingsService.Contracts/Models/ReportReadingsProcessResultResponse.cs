@@ -18,5 +18,8 @@ namespace ReadingsService.Contracts.Models
 
         [DataMember]
         public List<ProcessRegistry> ReadingsProcessResultList { get; set; }
+
+        [DataMember]
+        public string ErrorMessage { get; set; }
     }
 }

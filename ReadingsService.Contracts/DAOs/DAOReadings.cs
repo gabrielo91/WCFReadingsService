@@ -14,7 +14,12 @@ namespace ReadingsService.Contracts.DAOs
             throw new NotImplementedException();
         }
 
-        public bool Save(List<Readings> readingsList)
+        public string Save(List<Readings> readingsList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string SaveIfNotExists(List<Readings> readingsList)
         {
             throw new NotImplementedException();
         }

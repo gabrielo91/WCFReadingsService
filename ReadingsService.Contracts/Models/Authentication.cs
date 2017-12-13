@@ -11,10 +11,10 @@ namespace ReadingsService.Contracts.Models
     public class Authentication
     {
         [DataMember]
-        public int UserName { get; set; }
+        public string UserName { get; set; }
 
         [DataMember]
-        public int Password { get; set; }
+        public string Password { get; set; }
                
     }
 }

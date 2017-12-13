@@ -9,6 +9,6 @@ namespace ReadingsService.Contracts.DAOs
 {
     interface IDAOProveedores
     {
-        Proveedores GetProveedor(string username, string password);
+        bool ValidateProveedor(string username, string password);
     }
 }

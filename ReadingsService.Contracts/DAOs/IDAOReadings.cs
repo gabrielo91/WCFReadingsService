@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace ReadingsService.Contracts.DAOs
 {
-    interface IDAOReadings
+    public interface IDAOReadings
     {
         bool CheckIfExist(Readings reading);
-        bool Save(List<Readings> readingsList);
+        string Save(List<Readings> readingsList);
+        string SaveIfNotExists(List<Readings> readingsList);
     }
 }

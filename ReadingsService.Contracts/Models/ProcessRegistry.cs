@@ -17,7 +17,7 @@ namespace ReadingsService.Contracts.Models
 
         //Consecutivo que agrupa un conjunto de elementos ProcessRegistry
         [DataMember]
-        public int IdProcesoGeneral { get; set; }
+        public int ProcesID { get; set; }
 
         [DataMember]
         public DateTime Fecha { get; set; }
