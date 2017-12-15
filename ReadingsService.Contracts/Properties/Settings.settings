@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ReadingsService.Contracts.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionMetrolink" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=18.216.205.163:1521;Persist Security Info=True;User ID=perseo;Password=perseo;Unicode=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OracleClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=18.216.205.163:1521;Persist Security Info=True;User ID=perseo;Password=perseo;Unicode=True</Value>
+    </Setting>
+    <Setting Name="METROLINK_DB_CONEXION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP) (HOST=18.216.205.163)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe))); User Id=perseo;Password=perseo;Enlist=true;Pooling=true</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

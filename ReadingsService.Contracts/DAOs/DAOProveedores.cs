@@ -11,6 +11,7 @@ namespace ReadingsService.Contracts.DAOs
     {
         public bool ValidateProveedor(string username, string password)
         {
+
             throw new NotImplementedException();
         }
     }

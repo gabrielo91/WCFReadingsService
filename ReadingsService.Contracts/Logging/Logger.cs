@@ -60,7 +60,6 @@ namespace ReadingsService.Contracts.Logging
             }
             catch (Exception e)
             {
-                Console.WriteLine("Estamos en 2");
                 Console.ReadLine();
                 e.ToString();
             }
