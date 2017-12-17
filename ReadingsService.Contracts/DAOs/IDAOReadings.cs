@@ -10,7 +10,7 @@ namespace ReadingsService.Contracts.DAOs
     public interface IDAOReadings
     {
         bool CheckIfExist(Readings reading);
-        string Save(List<Readings> readingsList);
-        string SaveIfNotExists(List<Readings> readingsList);
+        bool Save(List<Readings> readingsList);
+        bool SaveIfNotExists(List<Readings> readingsList);
     }
 }

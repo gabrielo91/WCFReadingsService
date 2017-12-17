@@ -26,7 +26,7 @@ namespace ReadingsService.Contracts.Controller
             try
             {
                 IDAOProveedores daoProveedores = new DAOProveedores();
-                IDAOReadings daoReadings = new DAOReadings();
+                IReadingsManager readingsManager = new ReadingsManager();
                 string processID = null;
 
                 var userIsValid = daoProveedores.ValidateProveedor(reportReadings.Authentication.UserName, reportReadings.Authentication.Password);
@@ -35,7 +35,7 @@ namespace ReadingsService.Contracts.Controller
                 {
                     try
                     {
-                        processID = daoReadings.SaveIfNotExists(reportReadings.Readings);
+                        processID = readingsManager.SaveIfNotExists(reportReadings.Readings);
                         processRequestResultResponse.ProcessID = processID;
                         processRequestResultResponse.ProcessAccepted = true;
 

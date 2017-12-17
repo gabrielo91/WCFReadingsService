@@ -9,7 +9,7 @@ namespace ReadingsService.Contracts.Utils
     public class ProcessIdGenerator
     {
         public static string GenerarConsecutivo() {
-            throw new NotImplementedException();
+            return Guid.NewGuid().ToString();
         }  
     }
 }

@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace ReadingsService.Contracts.DAOs
 {
-    interface IDAOProcessRegistry
+    public interface IDAOProcessRegistry
     {
-        int InsertProcessRegistry(ProcessRegistry processRegistry);
+        
+        bool InsertProcessRegistry(ProcessRegistry processRegistry);
 
-        int InsertProcessRegistryArray(List<ProcessRegistry> processRegistry);
+        bool UpdateProcessRegistry(ProcessRegistry processRegistry);
 
         ProcessRegistry retrieveProcessRegistryById(string processId);
 

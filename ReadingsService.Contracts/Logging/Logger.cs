@@ -17,7 +17,7 @@ namespace ReadingsService.Contracts.Logging
 
             var line = Environment.NewLine + Environment.NewLine;
 
-            var ErrorlineNo = ex.StackTrace.Substring(ex.StackTrace.Length - 7, 7);
+            var ErrorlineNo = ex.StackTrace.Substring(ex.StackTrace.Length - 8, 7);
             var Errormsg = ex.GetType().Name.ToString();
             var extype = ex.GetType().ToString();
             var FullErrorMessage = ex.Message.ToString();

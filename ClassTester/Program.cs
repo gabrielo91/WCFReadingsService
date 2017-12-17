@@ -9,6 +9,8 @@ using ReadingsService.Contracts.Logging;
 using ReadingsService.Contracts.DataBase;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
+using ReadingsService.Contracts.DAOs;
+using ReadingsService.Contracts.Models;
 
 namespace ClassTester
 {
@@ -18,56 +20,70 @@ namespace ClassTester
         {
 
             IPreferencesManager preferencesManager = new PreferencesManager(@"D:\DesarrolloReadingsService\Recursos\config.json");
-
             try
             {
-                Console.WriteLine("Empezando");
+                Console.WriteLine("Empezando: "+ Guid.NewGuid().ToString());
                 IDatabaseController db = new DatabaseController();
                 ;
 
                 var username = "gabriel";
-               
+                var password = "gabriel";
+
                 OracleCommand cmd = new OracleCommand();
-                var conn = db.GetConnection();
-                //cmd.CommandText ="select count(*) from m_proveedores where vcusername = :username and vcpassword = :password";ç
-                var sql = "select count(*) cuenta from m_proveedores where vcusername = :username and vcpassword = :password";
-                //cmd.CommandType = CommandType.Text;
-
-
-                //OracleDataReader reader = cmd.ExecuteReader();
+                const string sql = "select count(*) cuenta from m_proveedores where vcusername = :username and vcpassword = :password";
 
                 var cuenta = 0;
                 var resultado = false;
-                using (conn)
+                using (OracleConnection conn = db.GetConnection())
                 {
 
                     conn.Open();
-                    var command = new OracleCommand(sql, conn);
-                    command.Parameters.Add(new OracleParameter(@"userame", username));
-                    command.Parameters.Add(new OracleParameter(@"password", username));
-
-                    OracleDataReader reader = command.ExecuteReader();
-
-                    while (reader.Read())
+                    using (var command = new OracleCommand(sql, conn))
                     {
-                        cuenta = Convert.ToInt32(reader["cuenta"]);
-                    }
+                        using (var oracleParameter = new OracleParameter(nameof(username), username))
+                        {
+                            command.Parameters.Add(oracleParameter);
+                        }
+                        using (var oracleParameter = new OracleParameter(nameof(password), password))
+                        {
+                            command.Parameters.Add(oracleParameter);
+                        }
 
-                    if (cuenta > 0)
-                    {
-                        resultado = true;
-                        Console.WriteLine("HAY DATOS");
+                        OracleDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            cuenta = Convert.ToInt32(reader["cuenta"]);
+                        }
+
+                        if (cuenta > 0)
+                        {
+                            resultado = true;
+                            Console.WriteLine("HAY DATOS");
+                        }
                     }
                 }
+
+                //-----------------------------------------------------------
+                Console.WriteLine("probando processregistry");
+                IDAOProcessRegistry dao = new DAOProcessRegistry();
+                var processRegistry = new ProcessRegistry
+                {
+                    ProcessID = "asdasdasdasdasd",
+                    EstadoTransaccion = 1,
+                    MensajeError = "hola, este es mi mensaje 3"
+                };
+
+                //dao.InsertProcessRegistry(processRegistry);
+                dao.UpdateProcessRegistry(processRegistry);
+                //-----------------------------------------------------------
+                //ProcessRegistry dato = dao.retrieveProcessRegistryById("asdasdasdasdasd");
+                List<ProcessRegistry> datos = dao.retrieveProcessListRegistryByGroupId("asdasdasdasdas");
 
 
 
                 Console.WriteLine("el dato es: " + cuenta);
-                conn.Dispose();
-
-                Console.ReadLine();
-
-
+         
 
             }
             catch (Exception e)
@@ -77,6 +93,7 @@ namespace ClassTester
                 Logger.Log(e);
             }
 
+            Console.ReadLine();
         }
     }
 }

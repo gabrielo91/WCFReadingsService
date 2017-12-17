@@ -10,20 +10,23 @@ namespace ReadingsService.Contracts.Models
     [DataContract]
     public class ProcessRegistry
     {
-        public string ProcessRegistryId { get; set; }
 
-        //Id de el resultado de inserciòn de cada una de las lecturas (Id de la lectura asociada)
-        public int ConsecutivoProcesoId { get; set; }
+        public readonly static int TRANSACCION_INCOMPLETA = 0;
+        public readonly static int TRANSACCION_COMPLETA = 0;
+
+
+        public string IndividualRegistryId { get; set; }
+        public long IDLectura { get; set; }
 
         //Consecutivo que agrupa un conjunto de elementos ProcessRegistry
         [DataMember]
-        public int ProcesID { get; set; }
+        public string ProcessID { get; set; }
 
         [DataMember]
         public DateTime Fecha { get; set; }
 
         [DataMember]
-        public string EstadoTransaccion { get; set; }
+        public int EstadoTransaccion { get; set; }
 
         [DataMember]
         public string MensajeError { get; set; }

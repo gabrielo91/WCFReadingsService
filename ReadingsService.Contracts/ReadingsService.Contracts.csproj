@@ -52,7 +52,9 @@
     <Compile Include="Configuration\ConfigurationModel.cs" />
     <Compile Include="Configuration\IPreferencesManager.cs" />
     <Compile Include="Configuration\PreferencesManager.cs" />
+    <Compile Include="Controller\IReadingsManager.cs" />
     <Compile Include="Controller\ReadingsController.cs" />
+    <Compile Include="Controller\ReadingsManager.cs" />
     <Compile Include="DAOs\DAOProcessRegistry.cs" />
     <Compile Include="DAOs\DAOProveedores.cs" />
     <Compile Include="DAOs\DAOReadings.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="DataBase\IDatabaseController.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Models\Authentication.cs" />
+    <Compile Include="Models\DatabaseSimpleResult.cs" />
     <Compile Include="Models\ProcessRegistry.cs" />
     <Compile Include="Models\ProcessRequestResultResponse.cs" />
     <Compile Include="Models\Proveedores.cs" />
