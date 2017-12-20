@@ -11,15 +11,19 @@ namespace ReadingsService.Contracts.Models
     public class Readings
     {
         public int Id { get; set; }
-        public int ConsecutivoProcesoId { get; set; }
+
         [DataMember]
         public string CodigoProveedor { get; set; }
+        [DataMember]
+        public string IdSuministroElectrico { get; set; }
         [DataMember]
         public DateTime FechaLectura { get; set; }
         [DataMember]
         public string NumeroMedidor { get; set; }
         [DataMember]
         public string CodigoMarcaMedidor { get; set; }
+        [DataMember]
+        public string TipoLectura { get; set; }
         [DataMember]
         public string TipoMedidor { get; set; }
         [DataMember]
@@ -42,6 +46,8 @@ namespace ReadingsService.Contracts.Models
         public int GeneroAlarma { get; set; }
         [DataMember]
         public int Certificada { get; set; }
+        [DataMember]
+        public int ConsecutivoProceso { get; set; }
 
     }
 }

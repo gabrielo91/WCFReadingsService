@@ -31,7 +31,7 @@ namespace ReadingsService.Contracts.Controller
 
                 if (processIDSaved)
                 {
-                    readingsInserted = daoReadings.SaveIfNotExists(readingsList);
+                    readingsInserted = daoReadings.SaveIfNotExists(readingsList, generalProcessID);
 
                     if (readingsInserted)
                     {

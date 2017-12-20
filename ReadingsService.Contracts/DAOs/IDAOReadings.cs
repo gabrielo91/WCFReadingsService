@@ -11,6 +11,6 @@ namespace ReadingsService.Contracts.DAOs
     {
         bool CheckIfExist(Readings reading);
         bool Save(List<Readings> readingsList);
-        bool SaveIfNotExists(List<Readings> readingsList);
+        bool SaveIfNotExists(List<Readings> readingsList, string generalProcessID);
     }
 }
