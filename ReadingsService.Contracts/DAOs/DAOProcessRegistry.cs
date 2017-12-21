@@ -16,7 +16,7 @@ namespace ReadingsService.Contracts.DAOs
         private readonly string CAMPO_ID_LECTURA = "ID_LECTURA";
         private readonly string CAMPO_FECHA = "FECHA";
         private readonly string CAMPO_ESTADO_TRANSACCION = "VCESTADO_TRANSACCION";
-        private readonly string CAMPO_MENSAJE_ERROR = "VC_MENSAJE_ERROR";
+        private readonly string CAMPO_MENSAJE_ERROR = "VCMENSAJE_ERROR";
         private readonly string CAMPO_PROCESS_ID_PADRE = "VCPROCESS_ID_PADRE";
 
         public bool InsertProcessRegistry(ProcessRegistry processRegistry)
@@ -39,6 +39,7 @@ namespace ReadingsService.Contracts.DAOs
                         command.Parameters.Add(new OracleParameter("processID", processRegistry.ProcessID));
                         command.Parameters.Add(new OracleParameter("estadoTransaccion", processRegistry.EstadoTransaccion));
                         command.ExecuteNonQuery();
+                        resultado = true;
 
                     }
 

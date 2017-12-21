@@ -52,7 +52,11 @@ namespace ReadingsService.Contracts.DAOs
                             foreach (Readings reading in readingsList)
                             {
                                 var parameters = setReadingParameters(reading, processID);
-                                command.Parameters.Add(parameters);
+                                foreach (var eachParamenter in parameters)
+                                {
+                                    command.Parameters.Add(eachParamenter);
+                                }
+                                                               
                                 reader = command.ExecuteReader();
 
                             }

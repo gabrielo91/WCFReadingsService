@@ -12,10 +12,10 @@ using ReadingsService.Contracts.Utils;
 
 namespace ReadingsService.Contracts.Controller
 {
-    class ReadingsManager : IReadingsManager
+    public class ReadingsManager : IReadingsManager
     {
         
-
+        //Remove public attribute
         public string SaveIfNotExists(List<Readings> readingsList)
         {
             string processID = null;

@@ -83,7 +83,25 @@ namespace ClassTester
 
 
                 Console.WriteLine("el dato es: " + cuenta);
-         
+
+                //Testing readings insert -----------------------------------------------------------
+                ReadingsManager readingsManager = new ReadingsManager();
+                List<Readings> readingsList = new List<Readings>();
+
+                Readings reading = new Readings();
+                reading.CodigoProveedor = "1";
+                reading.IdSuministroElectrico = "abc";
+                reading.FechaLectura = new DateTime();
+                reading.ConsecutivoProceso = 46;
+
+                readingsList.Add(reading);
+
+
+                readingsManager.SaveIfNotExists(readingsList);
+                Console.WriteLine("Terminamos");
+                //-----------------------------------------------------------------------------------
+
+
 
             }
             catch (Exception e)
