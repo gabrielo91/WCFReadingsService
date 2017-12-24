@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ReadingsService.Contracts.DAOs
 {
     public class DAOReadings : IDAOReadings
     {
+        public readonly string DATES_FORMAT = "yyyy-MM-dd HH:mm:ss";
         private readonly string INSERT_PROCEDURE = "insertar_lecturas";
 
         public bool CheckIfExist(Readings reading)
@@ -100,7 +102,7 @@ namespace ReadingsService.Contracts.DAOs
             in_tsfecha_lec.ParameterName = nameof(in_tsfecha_lec);
             in_tsfecha_lec.OracleDbType = OracleDbType.Date;
             in_tsfecha_lec.Direction = ParameterDirection.Input;
-            in_tsfecha_lec.Value = reading.FechaLectura;
+            in_tsfecha_lec.Value = datesFormatter(reading.FechaLectura);
             oracleParameterCollection.Add(in_tsfecha_lec);
 
             var in_vcnum_med = new OracleParameter();
@@ -222,6 +224,21 @@ namespace ReadingsService.Contracts.DAOs
             oracleParameterCollection.Add(out_vcmensaje_tecnico);
 
             return oracleParameterCollection;
+        }
+
+        private DateTime datesFormatter(string fechaLectura)
+        {
+            DateTime dateTime;
+            try
+            {
+                dateTime = DateTime.ParseExact(fechaLectura, DATES_FORMAT, new CultureInfo("en-US"));
+            }
+            catch (Exception e)
+            {                
+                throw new Exception("Invalid input date format, it must be YYYY-MM-DD HH24:MI:SS", e);
+            }
+            
+            return dateTime;
         }
         #endregion
 

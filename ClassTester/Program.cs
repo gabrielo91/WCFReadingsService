@@ -91,7 +91,8 @@ namespace ClassTester
                 Readings reading = new Readings();
                 reading.CodigoProveedor = "1";
                 reading.IdSuministroElectrico = "abc";
-                reading.FechaLectura = new DateTime();
+                //reading.FechaLectura = new DateTime();
+                reading.FechaLectura = "2018-05-01 14:35:00";
                 reading.ConsecutivoProceso = 46;
 
                 readingsList.Add(reading);

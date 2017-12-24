@@ -17,7 +17,7 @@ namespace ReadingsService.Contracts.Models
         [DataMember]
         public string IdSuministroElectrico { get; set; }
         [DataMember]
-        public DateTime FechaLectura { get; set; }
+        public string FechaLectura { get; set; }
         [DataMember]
         public string NumeroMedidor { get; set; }
         [DataMember]

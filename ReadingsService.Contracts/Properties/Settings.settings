@@ -10,7 +10,7 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=18.216.205.163:1521;Persist Security Info=True;User ID=perseo;Password=perseo;Unicode=True</Value>
     </Setting>
-    <Setting Name="METROLINK_DB_CONEXION" Type="System.String" Scope="User">
+    <Setting Name="METROLINK_DB_CONEXION" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP) (HOST=18.216.205.163)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe))); User Id=perseo;Password=perseo;Enlist=true;Pooling=true</Value>
     </Setting>
   </Settings>
