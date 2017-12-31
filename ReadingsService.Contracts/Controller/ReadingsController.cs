@@ -83,8 +83,8 @@ namespace ReadingsService.Contracts.Controller
 
                     if (null != generalProcessRegistry)
                     {
-                        reportReadingsProcessResultResponse.ProcessDone = true;
-                        reportReadingsProcessResultResponse.ResultFlag = FLAG_SUCCES;
+                        reportReadingsProcessResultResponse.ProcessDone = generalProcessRegistry.EstadoTransaccion == 1 ? true:false;
+                        reportReadingsProcessResultResponse.ResultFlag = generalProcessRegistry.EstadoTransaccion == 1 ?  FLAG_SUCCES :  FLAG_WARNING;
                         listaRegistrosProceso = daoProcessRegistry.retrieveProcessListRegistryByGroupId(processID);
                         reportReadingsProcessResultResponse.ReadingsProcessResultList = listaRegistrosProceso;
                     }
