@@ -40,7 +40,7 @@ namespace ReadingsService.Contracts.Models
         public string CodigoUsuario { get; set; }
         [DataMember]
         public string Programa { get; set; }
-        [DataMember]
+
         public string FechaTransaccion { get; set; }
         [DataMember]
         public int GeneroAlarma { get; set; }

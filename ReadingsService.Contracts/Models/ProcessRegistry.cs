@@ -12,7 +12,7 @@ namespace ReadingsService.Contracts.Models
     {
 
         public readonly static int TRANSACCION_INCOMPLETA = 0;
-        public readonly static int TRANSACCION_COMPLETA = 0;
+        public readonly static int TRANSACCION_COMPLETA = 1;
 
 
         public string IndividualRegistryId { get; set; }

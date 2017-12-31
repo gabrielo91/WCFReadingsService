@@ -53,6 +53,7 @@ namespace ReadingsService.Contracts.DAOs
                         {
                             foreach (Readings reading in readingsList)
                             {
+                                command.Parameters.Clear();
                                 var parameters = setReadingParameters(reading, processID);
                                 foreach (var eachParamenter in parameters)
                                 {
