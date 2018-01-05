@@ -10,7 +10,7 @@ namespace ReadingsService.Contracts.Logging
 {
     public class Logger
     {
-        public static readonly string CONFIGURATION_FILE_PATH = @"D:\DesarrolloReadingsService\Recursos\config.json";
+        public static readonly string CONFIGURATION_FILE_PATH = @"C:\ReadingsService\Config\config.json";
 
         public static void Log(Exception ex) {
             
