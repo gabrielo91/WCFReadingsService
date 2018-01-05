@@ -52,7 +52,7 @@ namespace ReadingsService.Contracts.Controller
             {
                 if (!processRegistryUpdated)
                 {
-                    UpdateProcessRegistry(generalProcessID, ProcessRegistry.TRANSACCION_COMPLETA, "Error insertado el paquete de lecturas");
+                    UpdateProcessRegistry(generalProcessID, ProcessRegistry.TRANSACCION_INCOMPLETA, "Error insertado el paquete de lecturas");
                 }
             }
 
