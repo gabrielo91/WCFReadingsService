@@ -93,8 +93,8 @@ namespace ReadingsService.Contracts.DAOs
             oracleParameterCollection.Add(in_ncod_prov);
 
             var in_nnis_rad = new OracleParameter();
-            in_nnis_rad.ParameterName = nameof(in_nnis_rad);
-            in_nnis_rad.OracleDbType = OracleDbType.NVarchar2;
+            in_nnis_rad.ParameterName = nameof(in_nnis_rad); 
+            in_nnis_rad.OracleDbType = OracleDbType.Int32;
             in_nnis_rad.Direction = ParameterDirection.Input;
             in_nnis_rad.Value = reading.IdSuministroElectrico;
             oracleParameterCollection.Add(in_nnis_rad);
@@ -203,7 +203,14 @@ namespace ReadingsService.Contracts.DAOs
             in_ncons_proceso.Direction = ParameterDirection.Input;
             in_ncons_proceso.Value = reading.ConsecutivoProceso;
             oracleParameterCollection.Add(in_ncons_proceso);
-            
+
+            var in_vccodtconsumo = new OracleParameter();
+            in_vccodtconsumo.ParameterName = nameof(in_vccodtconsumo);
+            in_vccodtconsumo.OracleDbType = OracleDbType.NVarchar2;
+            in_vccodtconsumo.Direction = ParameterDirection.Input;
+            in_vccodtconsumo.Value = reading.TipoConsumo;
+            oracleParameterCollection.Add(in_vccodtconsumo);
+
             var in_vcprocess_id = new OracleParameter(); //ID del proceso padre
             in_vcprocess_id.ParameterName = nameof(in_vcprocess_id);
             in_vcprocess_id.OracleDbType = OracleDbType.NVarchar2;
@@ -220,7 +227,7 @@ namespace ReadingsService.Contracts.DAOs
             var out_vcmensaje_tecnico = new OracleParameter();
             out_vcmensaje_tecnico.ParameterName = nameof(out_vcmensaje_tecnico);
             out_vcmensaje_tecnico.OracleDbType = OracleDbType.NVarchar2;
-            out_vcmensaje_tecnico.Direction = ParameterDirection.Input;
+            out_vcmensaje_tecnico.Direction = ParameterDirection.Output;
             out_vcmensaje_tecnico.Value = reading.CodigoProveedor;
             oracleParameterCollection.Add(out_vcmensaje_tecnico);
 
