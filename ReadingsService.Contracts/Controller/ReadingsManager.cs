@@ -15,7 +15,6 @@ namespace ReadingsService.Contracts.Controller
     public class ReadingsManager : IReadingsManager
     {
         
-        //Remove public attribute
         public string SaveIfNotExists(List<Readings> readingsList)
         {
             string processID = null;
